@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
-      redirect_to '/index'
+      redirect_to '/recipes'
     else
       render 'new'
     end

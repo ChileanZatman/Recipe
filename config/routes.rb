@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/index', to: 'recipes#index'
   resources :recipes
   resources :users
-  root 'static_pages#home'
+  root 'sessions#new'
 end
