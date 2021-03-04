@@ -1,40 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Preparation</th>
-      <th>Desc image</th>
-      <th>Content</th>
-      <th>Prep time</th>
-      <th>Cook time</th>
-      <th>Ingredients</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
+<% if @recipes.empty? -%>
+  <p>You don't have any recipes.</p>
+<% else -%>
+  <table>
+    <thead>
       <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.preparation %></td>
-        <td><%= recipe.desc_image %></td>
-        <td><%= recipe.content %></td>
-        <td><%= recipe.prep_time %></td>
-        <td><%= recipe.cook_time %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.user_id %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Preparation</th>
+        <th>Desc image</th>
+        <th>Content</th>
+        <th>Prep time</th>
+        <th>Cook time</th>
+        <th>Ingredients</th>
+        <th>User</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.name %></td>
+          <td><%= recipe.preparation %></td>
+          <td><%= recipe.desc_image %></td>
+          <td><%= recipe.content %></td>
+          <td><%= recipe.prep_time %></td>
+          <td><%= recipe.cook_time %></td>
+          <td><%= recipe.ingredients %></td>
+          <td><%= recipe.user_id %></td>
+          <td><%= link_to 'Show', recipe %></td>
+          <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+          <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end -%>
 
 <br>
 

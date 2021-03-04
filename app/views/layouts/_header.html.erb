@@ -1,7 +1,13 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <div class="container">
-    <%= link_to "Recipe-app", root_path, id: "logo" %>
-    <nav>
+    
+    <!---<nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
@@ -22,6 +28,51 @@
           <li><%= link_to "Sign up", signup_path %></li>
         <% end %>
       </ul>
-    </nav>
+    </nav>-->
+    
+     <% if logged_in? %>
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                    <div class="container">
+                        <a class="navbar-brand bg-light" href="/recipes" >
+                           Recipes
+                        </a>
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link bg-light" href="/create">New Recipe</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link bg-light" href="/logout">Logout</a>
+                                    </li>
+                            </ul>
+        
+                            
+                        </div>
+                    </div>
+                </nav>
+                <% else %>
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                    <div class="container">
+                        <a class="navbar-brand bg-light" href="/login" >
+                            Login
+                        </a>
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link bg-light" href="#">Home</a>
+                                    </li>
+                                    
+                            </ul>
+        
+                            <!-- Right Side Of Navbar -->
+                           
+                        </div>
+                    </div>
+                </nav>
+                  <% end %>
   </div>
 </header>
