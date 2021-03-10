@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse bg-info text-white align-right">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -31,9 +31,9 @@
     </nav>-->
     
      <% if logged_in? %>
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                <nav class="navbar navbar-expand-md navbar-info bg-info text-white shadow-sm align-right">
                     <div class="container">
-                        <a class="navbar-brand bg-light" href="/recipes" >
+                        <a class="navbar-brand bg-info text-white rounded" href="/recipes" >
                            Recipes
                         </a>
         
@@ -41,10 +41,10 @@
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link bg-light" href="/create">New Recipe</a>
+                                        <a class="nav-link bg-info text-white rounded" href="/create">New Recipe</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link bg-light" href="/logout">Logout</a>
+                                        <a class="nav-link bg-info text-white rounded" href="/logout">Logout</a>
                                     </li>
                             </ul>
         
@@ -53,9 +53,9 @@
                     </div>
                 </nav>
                 <% else %>
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                <nav class="navbar navbar-expand-md navbar-light bg-blue shadow-sm rounded allign-right">
                     <div class="container">
-                        <a class="navbar-brand bg-light" href="/login" >
+                        <a class="navbar-brand bg-info text-white rounded" href="/login" >
                             Welcome
                         </a>
         
