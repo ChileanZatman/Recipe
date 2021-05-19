@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :recipes
+  
   get 'static_pages/home'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

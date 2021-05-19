@@ -8,14 +8,5 @@ one:
   prep_time: MyString
   cook_time: MyString
   ingredients: MyString
-  user: one
+  user: michael
 
-two:
-  name: MyString
-  preparation: MyString
-  desc_image: MyString
-  content: MyString
-  prep_time: MyString
-  cook_time: MyString
-  ingredients: MyString
-  user: two

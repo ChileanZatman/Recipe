@@ -3,13 +3,18 @@ require "test_helper"
 class RecipesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @recipe = recipes(:one)
+    @user = users(:michael)
+    get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                          password: 'password' } }
+  
   end
-
-  test "should get index" do
+  #prueba no funciona, por no contar con parametros 
+  test "should get recipes" do
     get recipes_url
     assert_response :success
   end
-
+  #prueba no funciona, por adicion de restriccion de sesiones
   test "should get new" do
     get new_recipe_url
     assert_response :success
@@ -27,7 +32,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     get recipe_url(@recipe)
     assert_response :success
   end
-
+#prueba no funciona, por adicion de restriccion de sesiones
   test "should get edit" do
     get edit_recipe_url(@recipe)
     assert_response :success
